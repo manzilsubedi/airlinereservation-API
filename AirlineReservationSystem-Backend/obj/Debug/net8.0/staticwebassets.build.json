@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "atceMXgPKSk46A4udCp9zLPe8UvzBDBBWpF4gANqmCs=",
+  "Source": "AirlineReservationSystem-Backend",
+  "BasePath": "_content/AirlineReservationSystem-Backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

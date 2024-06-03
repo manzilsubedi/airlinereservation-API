@@ -1,0 +1,45 @@
+trigger:
+  branches:
+    include:
+      - master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '8.x'
+    installationPath: $(Agent.ToolsDirectory)/dotnet
+
+- task: NuGetToolInstaller@1
+  displayName: 'Install NuGet'
+
+- script: nuget restore
+  displayName: 'NuGet restore'
+
+- script: dotnet restore
+  displayName: 'dotnet restore'
+
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build'
+
+- script: dotnet test --configuration $(buildConfiguration) --logger trx
+  displayName: 'dotnet test'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publish'
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact'
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
