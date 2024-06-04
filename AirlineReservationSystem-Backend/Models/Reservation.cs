@@ -4,9 +4,12 @@ using System.Collections.Generic;
 
 public class Reservation
 {
-    public int Id { get; set; }
-    public DateTime ReservationTime { get; set; }
+    public string Id { get; set; }
+    public string PlaneId { get; set; }
+    public string SeatId { get; set; }
     public string UserId { get; set; }
-    public User User { get; set; }
-    public ICollection<ReservationSeat> ReservationSeats { get; set; }
+    public DateTime TravelDate { get; set; }
+    public string TravelTime { get; set; }
+    public bool IsReserved { get; set; }
+    public bool IsLocked { get; set; }
 }

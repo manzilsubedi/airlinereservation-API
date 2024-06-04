@@ -17,22 +17,13 @@ namespace AirlineReservationSystem_Backend.Controllers
         }
 
         [HttpGet("{planeId}")]
-        public async Task<ActionResult<IEnumerable<Seat>>> GetSeats(string planeId)
+        public async Task<ActionResult<List<Seat>>> GetSeats(string planeId, [FromQuery] DateTime travelDate, [FromQuery] string travelTime)
         {
-            if (planeId == "plane1")
+            var seats = await _seatReservationService.GetSeatsAsync(planeId, travelDate, travelTime);
+            if (seats == null)
             {
-                planeId = "66587ad30cef16eb96e7fedc";
-
+                return NotFound();
             }
-            else if (planeId == "plane2")
-            {
-                planeId = "66587ae20cef16eb96e81a6b";
-            }
-            else
-            {
-                planeId = "66587ad30cef16eb96e7fedc";
-            }
-                var seats = await _seatReservationService.GetSeatsAsync(planeId);
             return Ok(seats);
         }
 
@@ -44,16 +35,16 @@ namespace AirlineReservationSystem_Backend.Controllers
         }
 
         [HttpPost("reserve")]
-        public async Task<ActionResult<bool>> ReserveSeats(string planeId, [FromBody] List<string> seatIds, [FromQuery] string userId, [FromQuery] string userRole, [FromQuery] DateTime travelDate, [FromQuery] string travelTime)
+        public async Task<ActionResult<bool>> ReserveSeats([FromBody] ReserveSeatsRequest request)
         {
-            var result = await  _seatReservationService.ReserveSeatsAsync(planeId, seatIds, userId, userRole,travelDate,travelTime);
+            var result = await _seatReservationService.ReserveSeatsAsync(request.PlaneId, request.SeatIds, request.UserId, request.UserRole, request.TravelDate, request.TravelTime);
             if (result)
             {
                 return Ok(true);
             }
-            return BadRequest("These seats cannot be booked. Please try selecting multiple seats together.");
-        
+            return BadRequest("Failed to reserve seats.");
         }
+
 
         [HttpPost("lock")]
         public async Task<ActionResult<bool>> LockSeats(string planeId, [FromBody] List<string> seatIds, [FromQuery] string userId)
@@ -128,6 +119,21 @@ namespace AirlineReservationSystem_Backend.Controllers
             public string UserId { get; set; }
         }
 
+        [HttpPost("confirmPayment")]
+        public async Task<ActionResult> ConfirmPayment([FromBody] ConfirmPaymentRequest request)
+        {
+            var result = await _seatReservationService.ConfirmPaymentAsync(request.BookingId);
+            if (result)
+            {
+                return Ok();
+            }
+            return BadRequest("Failed to confirm payment.");
+        }
+
+        public class ConfirmPaymentRequest
+        {
+            public string BookingId { get; set; }
+        }
 
 
         public class PaymentRequest
@@ -138,5 +144,14 @@ namespace AirlineReservationSystem_Backend.Controllers
             public decimal TotalAmount { get; set; }
         }
 
+        public class ReserveSeatsRequest
+        {
+            public string PlaneId { get; set; }
+            public List<string> SeatIds { get; set; }
+            public string UserId { get; set; }
+            public string UserRole { get; set; }
+            public DateTime TravelDate { get; set; }
+            public string TravelTime { get; set; }
+        }
     }
 }
