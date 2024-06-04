@@ -15,5 +15,6 @@ namespace AirlineReservationSystem_Backend.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string PlaneId { get; set; }
         public string? UserId { get; set; } = string.Empty;
+        public decimal Price { get; set; }
     }
 }

@@ -5,14 +5,20 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using System.Linq;
+using static AirlineReservationSystem_Backend.Controllers.SeatReservationsController;
+using System.Numerics;
+using Microsoft.EntityFrameworkCore;
 
 public class SeatReservationService
 {
     private readonly IMongoCollection<Seat> _seats;
+    private readonly IMongoCollection<Booking> _bookings;
+
 
     public SeatReservationService(IMongoDatabase database)
     {
         _seats = database.GetCollection<Seat>("Seat");
+        _bookings = database.GetCollection<Booking>("Booking");
     }
 
     public async Task<List<Seat>> GetSeatsAsync(string planeId)
@@ -37,7 +43,8 @@ public class SeatReservationService
     //    return true;
     //}
 
-    public async Task<bool> ReserveSeatsAsync(string planeId, List<string> seatIds, string userId, string userRole)
+
+    public async Task<bool> ReserveSeatsAsync(string planeId, List<string> seatIds, string userId, string userRole, DateTime travelDate, string travelTime)
     {
         if (seatIds.Count > 6)
         {
@@ -50,10 +57,7 @@ public class SeatReservationService
             var invalidSeats = seats.Where(seat =>
           (int.Parse(seat.Row) >= 4 && (seat.Column == "B" || seat.Column == "E"))).ToList();
 
-            //var invalidSeats = seats.Where(seat =>
-            //    (seat.Column == "B" || seat.Column == "E") && seatIds.Count == 1).ToList();
-
-            if (invalidSeats.Count == 1 && seats.Count <2)
+            if (invalidSeats.Count == 1 && seats.Count < 2)
             {
                 return false; // Validation failed
             }
@@ -75,7 +79,6 @@ public class SeatReservationService
                 }
             }
 
-            // Ensure seats are in the same row or adjacent rows
             var rowNumbers = rows.Keys.Select(int.Parse).OrderBy(r => r).ToList();
             for (int i = 0; i < rowNumbers.Count - 1; i++)
             {
@@ -92,13 +95,129 @@ public class SeatReservationService
             seat.UserId = userId;
         }
 
-        var updateTasks = seats.Select(seat =>
-            _seats.ReplaceOneAsync(s => s.Id == seat.Id, seat)).ToArray();
-        Task.WaitAll(updateTasks);
+        var totalPrice = (double)seats.Sum(s => s.Price);
+        var booking = new Booking
+        {
+            UserId = userId,
+            PlaneId = planeId,
+            Seats = seats,
+            TotalPrice = totalPrice,
+            BookingDate = DateTime.UtcNow,
+            TravelDate = travelDate,
+            TravelTime = travelTime
+        };
 
-        return true;
+        using (var session = await _seats.Database.Client.StartSessionAsync())
+        {
+            session.StartTransaction();
+
+            try
+            {
+                await _bookings.InsertOneAsync(session, booking);
+
+                var updateTasks = seats.Select(seat =>
+                    _seats.ReplaceOneAsync(session, s => s.Id == seat.Id, seat)).ToArray();
+
+                await Task.WhenAll(updateTasks);
+
+                await session.CommitTransactionAsync();
+                return true;
+            }
+            catch
+            {
+                await session.AbortTransactionAsync();
+                throw;
+            }
+        }
     }
 
+
+    //public async Task<bool> ReserveSeatsAsync(string planeId, List<string> seatIds, string userId, string userRole)
+    //{
+    //    if (seatIds.Count > 6)
+    //    {
+    //        throw new InvalidOperationException("You cannot book more than six seats at once.");
+    //    }
+
+    //    var seats = await _seats.Find(s => s.PlaneId == planeId && seatIds.Contains(s.Id)).ToListAsync();
+    //    if (userRole == "user")
+    //    {
+    //        var invalidSeats = seats.Where(seat =>
+    //            int.Parse(seat.Row) >= 4 && (seat.Column == "B" || seat.Column == "E")).ToList();
+
+    //        if (invalidSeats.Count == 1 && seats.Count < 2)
+    //        {
+    //            return false; // Validation failed
+    //        }
+
+    //        var rows = seats.GroupBy(s => s.Row).ToDictionary(g => g.Key, g => g.ToList());
+
+    //        foreach (var row in rows)
+    //        {
+    //            var columns = row.Value.Select(s => s.Column).OrderBy(c => c).ToList();
+    //            for (int i = 0; i < columns.Count - 1; i++)
+    //            {
+    //                var currentColumn = columns[i];
+    //                var nextColumn = columns[i + 1];
+
+    //                if (!IsAdjacent(currentColumn, nextColumn))
+    //                {
+    //                    throw new InvalidOperationException("You can only book adjacent seats.");
+    //                }
+    //            }
+    //        }
+
+    //        // Ensure seats are in the same row or adjacent rows
+    //        var rowNumbers = rows.Keys.Select(int.Parse).OrderBy(r => r).ToList();
+    //        for (int i = 0; i < rowNumbers.Count - 1; i++)
+    //        {
+    //            if (rowNumbers[i + 1] - rowNumbers[i] > 1)
+    //            {
+    //                throw new InvalidOperationException("You can only book seats in the same row or adjacent rows.");
+    //            }
+    //        }
+    //    }
+
+    //    foreach (var seat in seats)
+    //    {
+    //        seat.IsReserved = true;
+    //        seat.UserId = userId;
+    //    }
+
+    //    var totalPrice = seats.Sum(s => s.Price);
+    //    var booking = new Booking
+    //    {
+    //        UserId = userId,
+    //        PlaneId = planeId,
+    //        Seats = seats,
+    //        TotalPrice = totalPrice,
+    //        BookingDate = DateTime.UtcNow
+    //    };
+
+    //    using (var session = await _seats.Database.Client.StartSessionAsync())
+    //    {
+    //        session.StartTransaction();
+
+    //        try
+    //        {
+    //            await _bookings.InsertOneAsync(session, booking);
+
+    //            var updateTasks = seats.Select(seat =>
+    //                _seats.ReplaceOneAsync(session, s => s.Id == seat.Id, seat)).ToArray();
+
+    //            await Task.WhenAll(updateTasks);
+
+    //            await session.CommitTransactionAsync();
+    //            return true;
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            await session.AbortTransactionAsync();
+    //            Console.WriteLine($"Transaction aborted due to: {ex.Message}");
+    //            throw;
+    //        }
+    //    }
+    //}
 
     private bool IsAdjacent(string currentColumn, string nextColumn)
     {
@@ -175,4 +294,52 @@ public class SeatReservationService
         }
         return false;
     }
+
+    public async Task<bool> ProcessPaymentAsync(PaymentRequest paymentRequest)
+    {
+        // Simulate payment processing
+        await Task.Delay(1000);
+
+        //var planeObjectId = new ObjectId(paymentRequest.PlaneId);
+        var seatObjectIds = paymentRequest.SeatIds.Select(id => (id)).ToList();
+        var seats = _seats.Find(s => s.PlaneId == paymentRequest.PlaneId && seatObjectIds.Contains(s.Id)).ToList();
+
+        foreach (var seat in seats)
+        {
+            seat.IsReserved = true;
+            seat.UserId = paymentRequest.UserId;
+            _seats.ReplaceOne(s => s.Id == seat.Id, seat);
+        }
+
+        return true;
+    }
+
+    // Add this method to your SeatReservationService
+
+
+    public async Task<bool> CancelBookingAsync(string bookingId, string userId)
+    {
+        var booking = await _bookings.Find(b => b.Id == bookingId && b.UserId == userId).FirstOrDefaultAsync();
+        if (booking == null)
+        {
+            return false;
+        }
+
+        // Reset the IsReserved status and UserId for the seats associated with the booking
+        var update = Builders<Seat>.Update.Set(s => s.IsReserved, false).Set(s => s.UserId, null).Set(s=> s.IsLocked, false);
+        var seatIds = booking.Seats.Select(s => s.Id).ToList();
+        await _seats.UpdateManyAsync(s => seatIds.Contains(s.Id), update);
+
+        // Delete the booking
+        await _bookings.DeleteOneAsync(b => b.Id == bookingId);
+
+        return true;
+    }
+
+
+    public async Task<List<Booking>> GetUserBookingsAsync(string userId)
+    {
+        return await _bookings.Find(b => b.UserId == userId).ToListAsync();
+    }
+
 }

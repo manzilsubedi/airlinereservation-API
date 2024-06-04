@@ -148,3 +148,4 @@ D:\SEAssignment\AirlineReservationSystem-Backend\AirlineReservationSystem-Backen
 D:\SEAssignment\AirlineReservationSystem-Backend\AirlineReservationSystem-Backend\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
 D:\SEAssignment\AirlineReservationSystem-Backend\AirlineReservationSystem-Backend\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
 D:\SEAssignment\AirlineReservationSystem-Backend\AirlineReservationSystem-Backend\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+D:\SEAssignment\AirlineReservationSystem-Backend\AirlineReservationSystem-Backend\obj\Debug\net8.0\AirlineReservationSystem-Backend.sourcelink.json

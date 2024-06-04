@@ -21,7 +21,7 @@ public class AuthController : ControllerBase
             return Unauthorized();
 
         var token = _userService.GenerateJwtToken(user);
-        return Ok(new { Token = token, role = user.Role });
+        return Ok(new { Token = token, role = user.Role, userId = user.Email });
     }
 
     [HttpPost("register")]
