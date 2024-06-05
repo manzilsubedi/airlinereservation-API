@@ -14,6 +14,7 @@ namespace AirlineReservationSystem_Backend.Models
         public DateTime BookingDate { get; set; }
         public DateTime TravelDate { get; set; }
         public string TravelTime { get; set; }
+        public bool IsPaid { get; set; }
     }
 
 }
