@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AirlineReservationSystem-Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a69d4bbe36deeceeb4627f5cd124bbd23ad6833")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9fece24bb5850b073d5e4393d350f87bc64b3a25")]
 [assembly: System.Reflection.AssemblyProductAttribute("AirlineReservationSystem-Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AirlineReservationSystem-Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

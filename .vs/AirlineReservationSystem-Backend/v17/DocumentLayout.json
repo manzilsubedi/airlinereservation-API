@@ -11,12 +11,8 @@
       "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\services\\seatreservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\models\\flightinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\models\\flightinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\models\\paymentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\models\\paymentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,32 +23,20 @@
       "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\models\\seat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\models\\flightinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\models\\flightinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\models\\mongosettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\models\\mongosettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\services\\planeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,20 +47,8 @@
       "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\models\\plane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\models\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\models\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\models\\reservationseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\models\\reservationseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|d:\\seassignment\\airlinereservationsystem-backend\\airlinereservationsystem-backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{448818CF-0FFE-4B9B-857D-016406C7C695}|AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend.csproj|solutionrelative:airlinereservationsystem-backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,11 +58,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "PaymentRequest.cs",
+              "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\PaymentRequest.cs",
+              "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Models\\PaymentRequest.cs",
+              "ToolTip": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\PaymentRequest.cs",
+              "RelativeToolTip": "AirlineReservationSystem-Backend\\Models\\PaymentRequest.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAgwA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T21:05:58.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "FlightInstance.cs",
               "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\FlightInstance.cs",
               "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Models\\FlightInstance.cs",
@@ -103,56 +88,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Booking.cs",
               "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\Booking.cs",
               "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Models\\Booking.cs",
               "ToolTip": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\Booking.cs",
               "RelativeToolTip": "AirlineReservationSystem-Backend\\Models\\Booking.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAuwA8AAAAuAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAIwAwAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T00:31:10.11Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "LoginRequest.cs",
-              "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\LoginRequest.cs",
-              "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Models\\LoginRequest.cs",
-              "ToolTip": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\LoginRequest.cs",
-              "RelativeToolTip": "AirlineReservationSystem-Backend\\Models\\LoginRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T00:04:21.507Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "AirlineReservationSystem-Backend\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T23:57:27.173Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Role.cs",
-              "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\Role.cs",
-              "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Models\\Role.cs",
-              "ToolTip": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\Role.cs",
-              "RelativeToolTip": "AirlineReservationSystem-Backend\\Models\\Role.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T23:40:33.776Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 9,
               "Title": "PlaneService.cs",
               "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Services\\PlaneService.cs",
               "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Services\\PlaneService.cs",
@@ -164,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "MongoSettings.cs",
               "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\MongoSettings.cs",
               "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Models\\MongoSettings.cs",
@@ -176,68 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "RegisterRequest.cs",
-              "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\RegisterRequest.cs",
-              "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Models\\RegisterRequest.cs",
-              "ToolTip": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\RegisterRequest.cs",
-              "RelativeToolTip": "AirlineReservationSystem-Backend\\Models\\RegisterRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T13:00:11.014Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ReservationSeat.cs",
-              "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\ReservationSeat.cs",
-              "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Models\\ReservationSeat.cs",
-              "ToolTip": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\ReservationSeat.cs",
-              "RelativeToolTip": "AirlineReservationSystem-Backend\\Models\\ReservationSeat.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T12:38:02.012Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\appsettings.json",
-              "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\appsettings.json",
-              "ToolTip": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\appsettings.json",
-              "RelativeToolTip": "AirlineReservationSystem-Backend\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-30T11:53:49.485Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\User.cs",
-              "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Models\\User.cs",
-              "ToolTip": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\User.cs",
-              "RelativeToolTip": "AirlineReservationSystem-Backend\\Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T11:52:52.179Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "AirlineReservationSystem-Backend\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAQwBgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T11:50:02.515Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 11,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Services\\UserService.cs",
@@ -249,20 +137,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Reservation.cs",
               "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\Reservation.cs",
               "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Models\\Reservation.cs",
               "ToolTip": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\Reservation.cs",
               "RelativeToolTip": "AirlineReservationSystem-Backend\\Models\\Reservation.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAAwAgAAAAmAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-29T16:08:03.489Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 10,
               "Title": "Plane.cs",
               "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\Plane.cs",
               "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Models\\Plane.cs",
@@ -292,7 +180,7 @@
               "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Controllers\\SeatReservationsController.cs",
               "ToolTip": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Controllers\\SeatReservationsController.cs",
               "RelativeToolTip": "AirlineReservationSystem-Backend\\Controllers\\SeatReservationsController.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAiwDUAAAAJAAAA",
+              "ViewState": "AQIAAHsAAAAAAAAAAAAAwH4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-29T13:19:12.117Z",
               "EditorCaption": ""
@@ -305,20 +193,20 @@
               "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Services\\SeatReservationService.cs",
               "ToolTip": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Services\\SeatReservationService.cs",
               "RelativeToolTip": "AirlineReservationSystem-Backend\\Services\\SeatReservationService.cs",
-              "ViewState": "AQIAAHYAAAAAAAAAAAAiwIsAAAAFAAAA",
+              "ViewState": "AQIAAKsAAAAAAAAAAAAcwLQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-29T13:17:29.607Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Seat.cs",
               "DocumentMoniker": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\Seat.cs",
               "RelativeDocumentMoniker": "AirlineReservationSystem-Backend\\Models\\Seat.cs",
               "ToolTip": "D:\\SEAssignment\\AirlineReservationSystem-Backend\\AirlineReservationSystem-Backend\\Models\\Seat.cs",
               "RelativeToolTip": "AirlineReservationSystem-Backend\\Models\\Seat.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAQwBMAAAAuAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBMAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-29T13:16:18.404Z",
               "EditorCaption": ""

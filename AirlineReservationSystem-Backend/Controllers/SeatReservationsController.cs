@@ -1,7 +1,5 @@
 ﻿using AirlineReservationSystem_Backend.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace AirlineReservationSystem_Backend.Controllers
 {
@@ -37,28 +35,31 @@ namespace AirlineReservationSystem_Backend.Controllers
         [HttpPost("reserve")]
         public async Task<ActionResult<bool>> ReserveSeats([FromBody] ReserveSeatsRequest request)
         {
-            var result = await _seatReservationService.ReserveSeatsAsync(request.PlaneId, request.SeatIds, request.UserId, request.UserRole, request.TravelDate, request.TravelTime);
-            if (result)
+            if (request == null || string.IsNullOrEmpty(request.PlaneId) || request.SeatIds == null || string.IsNullOrEmpty(request.UserId) || string.IsNullOrEmpty(request.TravelTime))
             {
-                return Ok(true);
+                return BadRequest("Invalid request data");
             }
-            return BadRequest("Failed to reserve seats.");
+
+            var result = await _seatReservationService.ReserveSeatsAsync(
+                request.PlaneId, request.SeatIds, request.UserId, request.UserRole, request.TravelDate, request.TravelTime);
+
+            return result ? Ok(true) : BadRequest("Failed to reserve seats.");
         }
 
-
         [HttpPost("lock")]
-        public async Task<ActionResult<bool>> LockSeats(string planeId, [FromBody] List<string> seatIds, [FromQuery] string userId)
+        public async Task<ActionResult<bool>> LockSeats([FromBody] LockSeatsRequest request)
         {
-            var result = await _seatReservationService.LockSeatsAsync(planeId, seatIds, userId);
+            var result = await _seatReservationService.LockSeatsAsync(request.PlaneId, request.SeatIds, request.UserId, request.TravelDate, request.TravelTime);
             return result ? Ok(true) : BadRequest(false);
         }
 
         [HttpPost("unlock")]
-        public async Task<ActionResult<bool>> UnlockSeats(string planeId, [FromBody] List<string> seatIds, [FromQuery] string userId)
+        public async Task<ActionResult<bool>> UnlockSeats([FromBody] UnlockSeatsRequest request)
         {
-            var result = await _seatReservationService.UnlockSeatsAsync(planeId, seatIds, userId);
+            var result = await _seatReservationService.UnlockSeatsAsync(request.PlaneId, request.SeatIds, request.UserId, request.TravelDate, request.TravelTime);
             return result ? Ok(true) : BadRequest(false);
         }
+
 
         [HttpPost("unlockAll")]
         public async Task<ActionResult<bool>> UnlockAllSeats([FromBody] UnlockAllRequest request)
@@ -80,25 +81,13 @@ namespace AirlineReservationSystem_Backend.Controllers
         }
 
         [HttpPost("unreserve")]
-        public async Task<ActionResult<bool>> UnreserveSeats(string planeId, [FromBody] List<string> seatIds, [FromQuery] string userId, [FromQuery] string userRole)
+        public async Task<ActionResult<bool>> UnreserveSeats([FromQuery] string planeId, [FromBody] List<string> seatIds, [FromQuery] string userId, [FromQuery] DateTime travelDate, [FromQuery] string travelTime)
         {
-            if (userRole != "staff" && userRole != "management")
-            {
-                return Forbid("Only staff and management can unreserve seats.");
-            }
-
-            var result = await _seatReservationService.UnreserveSeatsAsync(planeId, seatIds, userId);
+            var result = await _seatReservationService.UnreserveSeatsAsync(planeId, seatIds, userId, travelDate, travelTime);
             return result ? Ok(true) : BadRequest("Failed to unreserve seats.");
         }
 
-        [HttpPost("pay")]
-        public async Task<ActionResult<bool>> PayForSeats([FromBody] PaymentRequest paymentRequest)
-        {
-            var result = await _seatReservationService.ProcessPaymentAsync(paymentRequest);
-            return result ? Ok(true) : BadRequest("Payment failed.");
-        }
-        // Add this method to your SeatReservationsController
-
+     
         [HttpGet("bookings")]
         public async Task<ActionResult<IEnumerable<Booking>>> GetUserBookings([FromQuery] string userId)
         {
@@ -130,18 +119,16 @@ namespace AirlineReservationSystem_Backend.Controllers
             return BadRequest("Failed to confirm payment.");
         }
 
+        [HttpPost("pay")]
+        public async Task<ActionResult<bool>> PayForSeats([FromBody] PaymentRequest paymentRequest)
+        {
+            var result = await _seatReservationService.ProcessPaymentAsync(paymentRequest);
+            return result ? Ok(true) : BadRequest("Payment failed.");
+        }
+
         public class ConfirmPaymentRequest
         {
             public string BookingId { get; set; }
-        }
-
-
-        public class PaymentRequest
-        {
-            public string PlaneId { get; set; }
-            public List<string> SeatIds { get; set; }
-            public string UserId { get; set; }
-            public decimal TotalAmount { get; set; }
         }
 
         public class ReserveSeatsRequest
@@ -150,6 +137,25 @@ namespace AirlineReservationSystem_Backend.Controllers
             public List<string> SeatIds { get; set; }
             public string UserId { get; set; }
             public string UserRole { get; set; }
+            public DateTime TravelDate { get; set; }
+            public string TravelTime { get; set; }
+            
+        }
+
+        public class LockSeatsRequest
+        {
+            public string PlaneId { get; set; }
+            public List<string> SeatIds { get; set; }
+            public string UserId { get; set; }
+            public DateTime TravelDate { get; set; }
+            public string TravelTime { get; set; }
+        }
+
+        public class UnlockSeatsRequest
+        {
+            public string PlaneId { get; set; }
+            public List<string> SeatIds { get; set; }
+            public string UserId { get; set; }
             public DateTime TravelDate { get; set; }
             public string TravelTime { get; set; }
         }
