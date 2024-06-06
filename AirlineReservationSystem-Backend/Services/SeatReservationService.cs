@@ -197,13 +197,20 @@ public class SeatReservationService
             return false;
         }
 
-        // Reset the IsReserved status and UserId for the seats associated with the booking
-        var update = Builders<Seat>.Update.Set(s => s.IsReserved, false).Set(s => s.UserId, null).Set(s => s.IsLocked, false);
+        // Reset the IsReserved status, UserId, and IsLocked for the seats associated with the booking
+        var update = Builders<Seat>.Update
+            .Set(s => s.IsReserved, false)
+            .Set(s => s.UserId, null)
+            .Set(s => s.IsLocked, false);
         var seatIds = booking.Seats.Select(s => s.Id).ToList();
         await _seats.UpdateManyAsync(s => seatIds.Contains(s.Id), update);
 
         // Delete the booking
         await _bookings.DeleteOneAsync(b => b.Id == bookingId);
+
+        // Remove the reservations
+        var reservationFilter = Builders<Reservation>.Filter.In(r => r.SeatId, seatIds) & Builders<Reservation>.Filter.Eq(r => r.UserId, userId);
+        await _reservations.DeleteManyAsync(reservationFilter);
 
         return true;
     }
