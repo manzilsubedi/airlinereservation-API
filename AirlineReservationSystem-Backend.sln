@@ -5,6 +5,11 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirlineReservationSystem-Backend", "AirlineReservationSystem-Backend\AirlineReservationSystem-Backend.csproj", "{448818CF-0FFE-4B9B-857D-016406C7C695}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCase", "TestCase\TestCase.csproj", "{E868346B-7CAC-4B89-97E4-AF7B25BFC104}"
+	ProjectSection(ProjectDependencies) = postProject
+		{448818CF-0FFE-4B9B-857D-016406C7C695} = {448818CF-0FFE-4B9B-857D-016406C7C695}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{448818CF-0FFE-4B9B-857D-016406C7C695}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{448818CF-0FFE-4B9B-857D-016406C7C695}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{448818CF-0FFE-4B9B-857D-016406C7C695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E868346B-7CAC-4B89-97E4-AF7B25BFC104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E868346B-7CAC-4B89-97E4-AF7B25BFC104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E868346B-7CAC-4B89-97E4-AF7B25BFC104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E868346B-7CAC-4B89-97E4-AF7B25BFC104}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
