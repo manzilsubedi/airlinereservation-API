@@ -45,7 +45,7 @@ public class UserService
             Id = ObjectId.GenerateNewId().ToString(),
             Name = name,
             Email = email,
-            Role = role,
+            Role = "user",
             PasswordHash = _passwordHasher.HashPassword(null, password)
         };
 
